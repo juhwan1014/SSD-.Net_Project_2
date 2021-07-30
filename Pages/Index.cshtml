@@ -1,0 +1,18 @@
+﻿@page
+@model IndexModel
+@if (Model.Products.Any())
+{
+    <div class="app-product-items row">
+        @foreach (var product in Model.Products)
+        {
+            <div class="app-product-item col-md-4">
+                <partial name="_ProductPartial" for="@product" />
+            </div>
+        }
+    </div>
+}
+else
+{
+    <p>No Products!</p>
+}
+

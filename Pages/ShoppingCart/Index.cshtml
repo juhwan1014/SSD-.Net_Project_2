@@ -1,0 +1,8 @@
+﻿@page
+@model SSDeShopOnWeb.Pages.ShoppingCart.IndexModel
+
+        @foreach (var item in Model.Cart.CartProducts)
+        {
+            <img src = "@item.Product.PictureUri">
+            <span>@item.Quantity</span>
+                 }

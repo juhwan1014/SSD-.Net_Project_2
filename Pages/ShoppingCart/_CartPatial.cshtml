@@ -1,0 +1,46 @@
+﻿@page
+@model IEnumerable<SSDeShopOnWeb.Models.CartProduct>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CartProduct[0].UnitPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CartProduct[0].Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CartProduct[0].Cart)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CartProduct[0].Product)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.CartProduct) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnitPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cart.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product.Name)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
